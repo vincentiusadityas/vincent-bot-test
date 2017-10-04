@@ -23,6 +23,7 @@ def handle_text_message(event):
         member_ids_res = line_bot_api.get_group_member_ids(groupId)
         userId = member_ids_res.member_ids[random.randint(0, member_ids_res.member_ids.length-1)]
 
+        print(groupId)
         print(member_ids_res.member_ids.length)
         print(type(member_ids_res.member_ids))
         print(userId)
