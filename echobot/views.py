@@ -17,6 +17,7 @@ handler = WebhookHandler(settings.LINE_CHANNEL_SECRET)
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
+    print(event)
     userText = event.message.text
     if "siapa" in userText.lower():
         if isinstance(event, SourceGroup):
