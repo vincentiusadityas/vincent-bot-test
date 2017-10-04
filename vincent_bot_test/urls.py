@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include
 import echobot
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-	url(r'^echobot/',  include('echobot.urls')),
+	url(r'^echobot/', include('echobot.urls')),
 ]
