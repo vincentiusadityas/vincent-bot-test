@@ -21,10 +21,15 @@ def handle_text_message(event):
     if(("siapa" or "siapakah") in userText.lower()):
         groupId = event.source.group_id
         member_ids_res = line_bot_api.get_group_member_ids(groupId)
-        aMember = member_ids_res.member_ids[random.randint(0, member_ids_res.member_ids.length-1)]
+        userId = member_ids_res.member_ids[random.randint(0, member_ids_res.member_ids.length-1)]
+
         print(member_ids_res.member_ids.length)
         print(type(member_ids_res.member_ids))
-        print(aMember)
+        print(userId)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=userId)
+        )
 
     line_bot_api.reply_message(
         event.reply_token,
