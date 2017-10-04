@@ -30,9 +30,12 @@ def handle_text_message(event):
         member_ids_res = line_bot_api.get_group_member_ids(group_id=groupId)
         print(member_ids_res.member_ids)
         print(member_ids_res.next)
-
         userId = member_ids_res.member_ids[random.randint(0, member_ids_res.member_ids.length-1)]
-        
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=userId)
+        )
+
     else:
         line_bot_api.reply_message(
             event.reply_token,
