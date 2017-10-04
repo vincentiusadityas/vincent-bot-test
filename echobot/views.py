@@ -23,7 +23,7 @@ def handle_text_message(event):
     if "siapa" in userText.lower():
         groupId = event.source.sender_id
         print(groupId)
-        member_ids_res = line_bot_api.get_group_member_ids(groupId)
+        member_ids_res = line_bot_api.get_group_member_ids(group_id=groupId)
         print(member_ids_res.member_ids)
         print(member_ids_res.next)
 
