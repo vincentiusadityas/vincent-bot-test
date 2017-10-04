@@ -28,7 +28,7 @@ SECRET_KEY = 'jy7gk76qx*!&^lmt9_0(^*9ul%#qmx$*8qexck7uhb_g9pw+)p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vincent-bot-test.herokuapp.com',]
 
 # Application definition
 
