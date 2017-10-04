@@ -1,1 +1,1 @@
-web: gunicorn vincent-bot-test.wsgi --log-file -
+web: gunicorn vincent_bot_test.wsgi --log-file -
