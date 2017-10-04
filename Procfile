@@ -1,0 +1,1 @@
+web: gunicorn vincent-bot-test.wsgi --log-file -
