@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
-LINE_CHANNEL_ACCESS_TOKEN='1538809916'
+LINE_CHANNEL_ACCESS_TOKEN='1fP4ttUKNHFyAS9RhiFnS+7KsFYwgoWHCbdVdNrhXU9/Oo3COLpluFfuxQrrKT3J30xitII/kHREabeeLvD9svzlj6lPjy4aFF+JEuiiP5UGAfs4v3ZTUWEoKu8Xb66aqiydio+xjP0HZgw5A0a+BwdB04t89/1O/w1cDnyilFU='
 LINE_CHANNEL_SECRET='e55429352fe451074c5b4d6728fe5765'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
