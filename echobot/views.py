@@ -18,10 +18,11 @@ handler = WebhookHandler(settings.LINE_CHANNEL_SECRET)
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
     print(event.source)
+    eventSource = event.source
     userText = event.message.text
     print("siapa" in userText.lower())
     if "siapa" in userText.lower():
-        groupId = event.source.groupId
+        groupId = eventSource.get('groupId')
         member_ids_res = line_bot_api.get_group_member_ids(groupId)
         userId = member_ids_res.member_ids[random.randint(0, member_ids_res.member_ids.length-1)]
 
