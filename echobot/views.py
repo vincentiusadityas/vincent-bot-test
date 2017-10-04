@@ -2,7 +2,7 @@
 
 # WebhookHandler version
 
-
+import random
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbidden
 from django.views.decorators.csrf import csrf_exempt
@@ -17,6 +17,16 @@ handler = WebhookHandler(settings.LINE_CHANNEL_SECRET)
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
+    userText = event.message.text
+    if("siapa" or "siapakah" in userText.lower())
+        groupId = event.source.group_id
+        member_ids_res = line_bot_api.get_group_member_ids(groupId)
+        aMember = member_ids_res.member_ids[random.randint(0, member_ids_res.member_ids.length-1)]
+        print(type(member_ids_res.member_ids))
+        print(aMember)
+        line_bot_api.reply_message(
+        event.reply_token, TextSendMessage(text= )
+        )
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text)
