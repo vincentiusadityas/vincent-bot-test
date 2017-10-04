@@ -29,7 +29,7 @@ def handle_text_message(event):
         print(userId)
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=userId)
+            TextSendMessage(text=groupId)
         )
 
     line_bot_api.reply_message(
