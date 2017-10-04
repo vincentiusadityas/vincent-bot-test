@@ -23,16 +23,16 @@ def handle_text_message(event):
     if "siapa" in userText.lower():
         groupId = event.source.sender_id
         print(groupId)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=groupId)
+        )
         member_ids_res = line_bot_api.get_group_member_ids(group_id=groupId)
         print(member_ids_res.member_ids)
         print(member_ids_res.next)
 
         userId = member_ids_res.member_ids[random.randint(0, member_ids_res.member_ids.length-1)]
-        print(userId)
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=groupId)
-        )
+        
     else:
         line_bot_api.reply_message(
             event.reply_token,
