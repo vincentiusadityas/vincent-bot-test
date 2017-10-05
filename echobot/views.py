@@ -31,7 +31,7 @@ def handle_text_message(event):
         groupDict[groupId].append(userId)
 
     if "siapa" in userText.lower():
-        name = groupDict[groupId][random.randint(0, groupDict[groupId].length-1)]
+        name = groupDict[groupId][random.randint(0, len(groupDict[groupId])-1)]
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=name)
