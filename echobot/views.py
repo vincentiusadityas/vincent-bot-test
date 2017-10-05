@@ -52,35 +52,35 @@ def handle_text_message(event):
             TextSendMessage(text=yesNo[random.randint(0,1)])
             )
 
-    elif "main yuk" in userText.lower():
-        buttons_template_message = TemplateSendMessage(
-            alt_text='Buttons template',
-            template=ButtonsTemplate(
-                thumbnail_image_url='https://example.com/image.jpg',
-                title='Menu',
-                text='Please select',
-                actions=[
-                    PostbackTemplateAction(
-                        label='postback',
-                        text='postback text',
-                        data='action=buy&itemid=1'
-                    ),
-                    MessageTemplateAction(
-                        label='message',
-                        text='message text'
-                    ),
-                    URITemplateAction(
-                        label='uri',
-                        uri='http://example.com/'
-                    )
-                ]
-            )
-        )
-        
-        line_bot_api.reply_message(
-            event.reply_token,
-            buttons_template_message
-            )
+    # elif "main yuk" in userText.lower():
+    #     buttons_template_message = TemplateSendMessage(
+    #         alt_text='Buttons template',
+    #         template=ButtonsTemplate(
+    #             thumbnail_image_url='https://example.com/image.jpg',
+    #             title='Menu',
+    #             text='Please select',
+    #             actions=[
+    #                 PostbackTemplateAction(
+    #                     label='postback',
+    #                     text='postback text',
+    #                     data='action=buy&itemid=1'
+    #                 ),
+    #                 MessageTemplateAction(
+    #                     label='message',
+    #                     text='message text'
+    #                 ),
+    #                 URITemplateAction(
+    #                     label='uri',
+    #                     uri='http://example.com/'
+    #                 )
+    #             ]
+    #         )
+    #     )
+    #
+    #     line_bot_api.reply_message(
+    #         event.reply_token,
+    #         buttons_template_message
+    #         )
 
     else:
         line_bot_api.reply_message(
