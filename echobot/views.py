@@ -30,8 +30,17 @@ def handle_text_message(event):
     else:
         groupDict[groupId].append(userId)
 
+    if "siapa saya" in userText.lower():
+        profile = line_bot_api.get_group_member_profile(groupId, event.source.user_id)
+        name = profile.display_name
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=name)
+        )
+
     if "siapa" in userText.lower():
-        name = groupDict[groupId][random.randint(0, len(groupDict[groupId])-1)]
+        profile = line_bot_api.get_group_member_profile(groupId, groupDict[groupId][random.randint(0, len(groupDict[groupId])-1)])
+        name = profile.display_name
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=name)
