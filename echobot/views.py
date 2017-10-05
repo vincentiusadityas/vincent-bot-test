@@ -82,20 +82,20 @@ def handle_text_message(event):
     #         buttons_template_message
     #         )
 
-    else:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=event.message.text)
-        )
+    # else:
+    #     line_bot_api.reply_message(
+    #         event.reply_token,
+    #         TextSendMessage(text=event.message.text)
+    #     )
 
 
-@handler.default()
-def default(event):
-    print(event)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text='Currently Not Support None Text Message')
-    )
+# @handler.default()
+# def default(event):
+#     print(event)
+#     line_bot_api.reply_message(
+#         event.reply_token,
+#         TextSendMessage(text='Currently Not Support None Text Message')
+#     )
 
 
 @csrf_exempt
